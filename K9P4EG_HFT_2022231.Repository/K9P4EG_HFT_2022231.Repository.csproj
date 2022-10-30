@@ -8,4 +8,8 @@
     <ProjectReference Include="..\K9P4EG_HFT_2022231.Models\K9P4EG_HFT_2022231.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
+
 </Project>
