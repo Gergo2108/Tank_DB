@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace K9P4EG_HFT_2022231.Models
 {
-    class Battle
+   public class Battle
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

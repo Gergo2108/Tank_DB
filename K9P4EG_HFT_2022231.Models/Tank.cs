@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace K9P4EG_HFT_2022231.Models
 {
-    class Tank
+   public class Tank
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

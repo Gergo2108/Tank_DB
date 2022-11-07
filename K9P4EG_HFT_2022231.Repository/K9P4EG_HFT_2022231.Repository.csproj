@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\K9P4EG_HFT_2022231.Models\K9P4EG_HFT_2022231.Models.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.14" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\" />
+    <ProjectReference Include="..\K9P4EG_HFT_2022231.Models\K9P4EG_HFT_2022231.Models.csproj" />
   </ItemGroup>
 
 </Project>
