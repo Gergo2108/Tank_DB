@@ -28,6 +28,6 @@ namespace K9P4EG_HFT_2022231.Models
             return $"#{Id}-Tank: MODEL = {Model}, Weight: {Weight} kg, Gunsize: {GunSize} mm, " +
                 $"Country : {Country} Id: {CountryId}, Battle: {Battle} Id: {BattleId},";
         }
-
+       
     }
 }

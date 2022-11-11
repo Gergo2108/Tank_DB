@@ -16,8 +16,9 @@ namespace K9P4EG_HFT_2022231.Models
 
         public string Name { get; set; }
 
-        public DateTime Date { get; set; }
+        
         public virtual ICollection<Tank> Tanks { get; set; }
+        public virtual ICollection<Country> Countries { get; set; }
 
         public Battle()
         {
@@ -26,7 +27,7 @@ namespace K9P4EG_HFT_2022231.Models
 
         public override string ToString()
         {
-            return $"#{Id}-Battle: Name = {Name}, Date: {Date}";
+            return $"#{Id}-Battle: Name = {Name}, ";
         }
     }
 }

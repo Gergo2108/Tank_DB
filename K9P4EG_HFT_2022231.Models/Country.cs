@@ -17,6 +17,8 @@ namespace K9P4EG_HFT_2022231.Models
 
         public virtual ICollection<Tank> Tanks { get; set; }
 
+        public virtual ICollection<Battle> Battles { get; set; }
+
         public Country()
         {
             Tanks = new HashSet<Tank>();
