@@ -19,6 +19,11 @@ namespace K9P4EG_HFT_2022231.Repository.Database
             this.Database.EnsureCreated();
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseInMemoryDatabase("db");
+            base.OnConfiguring(optionsBuilder);
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Tank>(entity => 
@@ -67,7 +72,7 @@ namespace K9P4EG_HFT_2022231.Repository.Database
             Battle b1 = new Battle() { Name = "AsiaWar", Id = 1,};
 
             Tank t1 = new Tank() { Id = 1, CountryId = Russia.Id, GunSize = 120, Weight = 12, Model = "T-72", BattleId = b1.Id };
-            Tank t2 = new Tank() { Id = 2, CountryId = Chine.Id, GunSize = 100, Weight = 10, Model = "Type-1", BattleId = b1.Id };
+            Tank t2 = new Tank() { Id = 2, CountryId = Chine.Id, GunSize = 100, Weight = 10, Model = "Type-1", BattleId = b1.Id,};
 
             modelBuilder.Entity<Country>().HasData(Russia, Chine);
             modelBuilder.Entity<Battle>().HasData(b1);

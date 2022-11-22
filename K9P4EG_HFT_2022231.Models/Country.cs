@@ -22,6 +22,7 @@ namespace K9P4EG_HFT_2022231.Models
         public Country()
         {
             Tanks = new HashSet<Tank>();
+            Battles = new HashSet<Battle>();
         }
 
         public override string ToString()
