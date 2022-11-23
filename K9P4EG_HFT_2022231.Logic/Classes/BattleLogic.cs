@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace K9P4EG_HFT_2022231.Logic
 {
-    class TankLogic
+    class BattleLogic 
     {
     }
 }
