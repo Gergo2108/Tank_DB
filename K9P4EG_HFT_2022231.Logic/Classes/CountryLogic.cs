@@ -32,7 +32,7 @@ namespace K9P4EG_HFT_2022231.Logic
             var country = this.repo.Read(id);
             if (country == null)
             {
-                throw new ArgumentException("Tank not exissts");
+                throw new ArgumentException("Country not exissts");
             }
             return country;
         }
@@ -46,5 +46,24 @@ namespace K9P4EG_HFT_2022231.Logic
         {
             this.repo.Update(item);
         }
-    }
+
+        //NON-CRUD
+
+        public Country StrongerCountry()
+        {
+            var r = from c in repo.ReadAll()
+                   orderby c.Tanks.Count descending
+                   select new Country
+                   {
+                       Name = c.Name,
+                       Tanks = c.Tanks,
+                       Battles = c.Battles,
+                       Id = c.Id
+                   };
+            return r.ToList().First();
+
+
+
+        }
+    }  
 }

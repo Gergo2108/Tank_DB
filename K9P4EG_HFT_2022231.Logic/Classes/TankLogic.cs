@@ -74,5 +74,15 @@ namespace K9P4EG_HFT_2022231.Logic
                               };
             return countrystat;
         }
+
+        public IEnumerable<Tank> GetTanksByGunRange(int min, int max)
+        {
+            return from tank in repo.ReadAll()
+                   where min <= tank.GunSize && tank.GunSize <= max
+                   select tank;
+
+        }
+
+        
     }
 }
