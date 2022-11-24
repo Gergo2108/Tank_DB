@@ -87,5 +87,21 @@ namespace K9P4EG_HFT_2022231.Test
             Assert.That(weight.Equals(9));
         }
 
+        [Test]
+
+        public void ReadCountryStatsTester()
+        {
+
+            CountryStatistic statistic = new CountryStatistic()
+            {
+                CountryName = FakeCountry.Name,
+                TankCount = 2,
+            };
+            var stats = TankLogic.ReadCountryStats();
+            mock.Verify(mock => mock.ReadAll(), Times.Once);
+            Assert.That(stats, Has.Exactly(1).Items);
+            Assert.That(stats.First(), Is.EqualTo(statistic));
+        }
+
     }
 }
