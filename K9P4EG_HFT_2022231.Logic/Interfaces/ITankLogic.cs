@@ -18,7 +18,9 @@ namespace K9P4EG_HFT_2022231.Logic.Interfaces
         double AvgWeight();
         double BigestGun();
         public IEnumerable<CountryStatistic> ReadCountryStats();
-       
-        
+        public IEnumerable<Tank> GetTanksByGunRange(int min, int max);
+
+
+
     }
 }
