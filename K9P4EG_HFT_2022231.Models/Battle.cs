@@ -16,13 +16,15 @@ namespace K9P4EG_HFT_2022231.Models
 
         public string Name { get; set; }
 
-        
+      
         public virtual ICollection<Tank> Tanks { get; set; }
+        
         public virtual ICollection<Country> Countries { get; set; }
 
         public Battle()
         {
             Tanks = new HashSet<Tank>();
+            Countries = new HashSet<Country>();
         }
 
         public override string ToString()

@@ -21,7 +21,7 @@ namespace K9P4EG_HFT_2022231.Models
        [ForeignKey(nameof(Country))]
         public int CountryId { get; set; }
         [NotMapped]
-        public virtual Battle Battle { get; set; }
+        public virtual  Battle Battle { get; set; }
         [ForeignKey(nameof(Battle))]
         public int BattleId { get; set; }
         public Tank()
@@ -31,7 +31,7 @@ namespace K9P4EG_HFT_2022231.Models
 
         public override string ToString()
         {
-            return $"#{Id}-Tank: MODEL = {Model}, Weight: {Weight} kg, Gunsize: {GunSize} mm, " +
+            return $"#{Id}-Tank: MODEL = {Model}, Weight: {Weight} Tons, Gunsize: {GunSize} mm, " +
                 $"Country : {Country} Id: {CountryId}, Battle: {Battle} Id: {BattleId},";
         }
        
