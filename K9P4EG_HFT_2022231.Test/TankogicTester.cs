@@ -30,6 +30,7 @@ namespace K9P4EG_HFT_2022231.Test
 
             tank1 = new Tank()
             {
+                
                 Model = "BTR",
                 GunSize = 65,
                 Weight = 8,
@@ -38,6 +39,7 @@ namespace K9P4EG_HFT_2022231.Test
 
             tank2 = new Tank()
             {
+                Id = 2,
                 Model = "BTR-2",
                 GunSize = 88,
                 Weight = 10,
@@ -102,6 +104,22 @@ namespace K9P4EG_HFT_2022231.Test
             Assert.That(stats, Has.Exactly(1).Items);
             Assert.That(stats.First(), Is.EqualTo(statistic));
         }
+
+        [Test]
+        public void TankCreateTester()
+        {
+            Tank t1 = new Tank()
+            {
+               Model = "E-100",
+               Weight = 100,
+               Country = FakeCountry
+
+            };
+            TankLogic.Create(t1);
+            mock.Verify(mock => mock.Create(t1), Times.Once);
+
+        }
+
 
     }
 }
