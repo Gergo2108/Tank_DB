@@ -66,6 +66,20 @@ namespace K9P4EG_HFT_2022231.Test
                 mock.Verify(mock => mock.ReadAll(), Times.Once);
                 Assert.That(c.Name == "Hungary");
             }
+
+            [Test]
+            public void CountryCreateTester()
+            {
+                Country S = new Country()
+                {
+                    Name = "Spain",
+                    Id = 2,
+
+                };
+                CountryLogic.Create(S);
+                mock.Verify(mock => mock.Create(S), Times.Once);
+               
+            }
         }
         
     }
