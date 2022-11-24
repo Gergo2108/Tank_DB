@@ -78,5 +78,14 @@ namespace K9P4EG_HFT_2022231.Test
             Assert.That(gun.Equals(88));
         }
 
+        [Test]
+
+        public void AvgWeightester()
+        {
+            var weight = TankLogic.AvgWeight();
+            mock.Verify(mock => mock.ReadAll(), Times.Once);
+            Assert.That(weight.Equals(9));
+        }
+
     }
 }
