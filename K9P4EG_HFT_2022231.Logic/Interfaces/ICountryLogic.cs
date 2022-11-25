@@ -10,5 +10,7 @@ namespace K9P4EG_HFT_2022231.Logic
         Country Read(int id);
         IEnumerable<Country> ReadAll();
         void Update(Country item);
+
+        public Country StrongerCountry();
     }
 }

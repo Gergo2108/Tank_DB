@@ -29,10 +29,10 @@ namespace K9P4EG_HFT_2022231.Test
                 FakeCountry = new Country();
                 FakeCountry.Id = 1;
                 FakeCountry.Name = "Hungary";
-
+                
                 tank1 = new Tank()
                 {
-
+                    Id = 1,
                     Model = "BTR",
                     GunSize = 65,
                     Weight = 8,
