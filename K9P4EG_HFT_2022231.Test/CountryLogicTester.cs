@@ -80,6 +80,31 @@ namespace K9P4EG_HFT_2022231.Test
                 mock.Verify(mock => mock.Create(S), Times.Once);
                
             }
+
+            [Test]
+            public void UpdateTester()
+            {
+                Country k1 = new Country
+                {
+                    Name = "Test",
+                    Id = 2,
+
+                };
+                CountryLogic.Update(k1);
+                mock.Verify(mock => mock.Update(k1), Times.Once);
+            }
+
+            [Test]
+            public void CountryReadWrongIdTester()
+            {
+               
+
+                Assert.Throws<ArgumentException>(() =>
+                {
+                    CountryLogic.Read(100);
+                });
+                mock.Verify(r => r.Read(100), Times.Once);
+            }
         }
         
     }

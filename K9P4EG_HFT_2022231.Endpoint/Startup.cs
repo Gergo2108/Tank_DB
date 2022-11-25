@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
@@ -20,7 +21,14 @@ namespace K9P4EG_HFT_2022231.Endpoint
 {
     public class Startup
     {
-       
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<TankDbContex>();
@@ -37,7 +45,7 @@ namespace K9P4EG_HFT_2022231.Endpoint
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TankDb .Endpoint", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "K9P4EG_HFT_2022231.Endpoint", Version = "v1" });
             });
 
 
@@ -50,7 +58,7 @@ namespace K9P4EG_HFT_2022231.Endpoint
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TankDb.Endpoint v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "K9P4EG_HFT_2022231.Endpoint v1"));
             }
 
             app.UseExceptionHandler(c => c.Run(async context =>

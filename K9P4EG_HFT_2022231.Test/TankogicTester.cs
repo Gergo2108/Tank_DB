@@ -72,6 +72,20 @@ namespace K9P4EG_HFT_2022231.Test
         }
 
         [Test]
+        public void UpdateTester()
+        {
+            Tank t1 = new Tank()
+            {
+                Model = "E-100",
+                Weight = 100,
+                Country = FakeCountry
+
+            };
+            TankLogic.Update(t1);
+            mock.Verify(mock => mock.Update(t1), Times.Once);
+        }
+
+        [Test]
 
         public void BigestGunTester()
         {

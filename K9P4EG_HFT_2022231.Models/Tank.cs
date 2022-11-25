@@ -20,7 +20,7 @@ namespace K9P4EG_HFT_2022231.Models
         public virtual Country Country { get; set; }
        [ForeignKey(nameof(Country))]
         public int CountryId { get; set; }
-        [NotMapped]
+       [NotMapped]
         public virtual  Battle Battle { get; set; }
         [ForeignKey(nameof(Battle))]
         public int BattleId { get; set; }
