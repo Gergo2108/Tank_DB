@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace K9P4EG_HFT_2022231.Models
@@ -17,10 +18,12 @@ namespace K9P4EG_HFT_2022231.Models
         public int Weight { get; set; }
         public int GunSize { get; set; }
         [NotMapped]
+        [JsonIgnore]
         public virtual Country Country { get; set; }
        [ForeignKey(nameof(Country))]
         public int CountryId { get; set; }
-       [NotMapped]
+        [NotMapped]
+        [JsonIgnore]
         public virtual  Battle Battle { get; set; }
         [ForeignKey(nameof(Battle))]
         public int BattleId { get; set; }
